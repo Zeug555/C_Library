@@ -33,7 +33,7 @@ void linkedListInsertTo(LinkedList* linkedList, Data* dataIn, int index);
 void linkedListRmvNode(LinkedList* linkedList, int index);
 
 //Return the size of the linkedList
-void linkedListSize(LinkedList* linkedList);
+int linkedListSize(LinkedList* linkedList);
 
 /* --------------------------- CHANGE IT FOR YOUR APPLICATION ---------------------------*/
 

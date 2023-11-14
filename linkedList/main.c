@@ -29,5 +29,20 @@ int main()
         linkedListInsert(linkedlist, shrek);
     linkedListPrint(linkedlist);
 
+    //Insert element at the 10 place linkedList
+    /*
+    printf("\n--- Test node insert in a position ---\n\n");
+    Data* oui = (Data*)malloc(sizeof(Data));
+    strcpy(oui->content, "oui");
+    
+    linkedListInsert(linkedlist, shrek);
+    linkedListPrint(linkedlist);
+    */
+
+    //linkedListSize test
+    printf("\n--- Size calculation test ---\n\n");
+    int size = linkedListSize(linkedlist);
+    printf("Size %d\n", size);
+
     return 0;
 }

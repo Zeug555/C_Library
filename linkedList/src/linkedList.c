@@ -20,12 +20,29 @@ void linkedListInsert(LinkedList* linkedList, Data* dataIn)
 {
     LinkedList* newNode = (LinkedList*)malloc(sizeof(LinkedList));
     LinkedList* currentNode = linkedList;
-    
+
     while (currentNode->next != NULL) {
             currentNode = currentNode->next;
     }
     currentNode->next = newNode;
     newNode->data = dataIn;
+}
+
+void linkedListInsertTo(LinkedList* linkedList, Data* dataIn, int index)
+{
+    
+}
+
+int linkedListSize(LinkedList* linkedList)
+{
+    LinkedList* currentNode = linkedList;
+    int size = 0;
+    while(currentNode!= NULL)
+    {
+        size++;
+        currentNode = currentNode->next;
+    }
+    return size;
 }
 
 /* --------------------------- CHANGE IT FOR YOUR APPLICATION ---------------------------*/

@@ -6,7 +6,7 @@ SRCDIR=./src
 SOURCES=$(wildcard $(SRCDIR)/*.c)
 OBJECTS=$(SOURCES:.c=.o)
 
-EXECUTABLE=appli_projet
+EXECUTABLE=exemple
 
 all: $(EXECUTABLE)
 
