@@ -12,16 +12,16 @@ int main()
 {
     /* --------------------------- Exemple ---------------------------*/
 
-    //Head creation
+    // Head creation
     Data* header = (Data*)malloc(sizeof(Data));
     strcpy(header->content, "baguette");
 
-    //LinkedList creation
+    // LinkedList creation
     printf("\n--- List Init Test ---\n\n");
     LinkedList* linkedlist = linkedListInit(header);
     linkedListPrint(linkedlist);
 
-    //Insert 10 elements linkedList
+    // Insert 10 elements linkedList
     printf("\n--- Test node insert ---\n\n");
     Data* shrek = (Data*)malloc(sizeof(Data));
     strcpy(shrek->content, "shrek");
@@ -29,17 +29,25 @@ int main()
         linkedListInsert(linkedlist, shrek);
     linkedListPrint(linkedlist);
 
-    //Insert element at the 10 place linkedList
-    /*
-    printf("\n--- Test node insert in a position ---\n\n");
+    // Insert element at the 5 place linkedList
+    printf("\n--- Test node insert the position 5 ---\n\n");
     Data* oui = (Data*)malloc(sizeof(Data));
     strcpy(oui->content, "oui");
-    
-    linkedListInsert(linkedlist, shrek);
+    linkedListInsertTo(linkedlist, oui, 5);
     linkedListPrint(linkedlist);
-    */
 
-    //linkedListSize test
+    // Print the 5 element of the linkedList
+    printf("\n--- Test Print by index ---\n\n");
+    linkedListPrintIndex(linkedlist, 5);
+
+    // HeadInsert of the linkedList
+    printf("\n--- HeadInsertion Test ---\n\n");
+    Data* non = (Data*)malloc(sizeof(Data));
+    strcpy(non->content, "non");
+    linkedListInsertHead(&linkedlist, non);
+    linkedListPrint(linkedlist);
+
+    // linkedListSize test
     printf("\n--- Size calculation test ---\n\n");
     int size = linkedListSize(linkedlist);
     printf("Size %d\n", size);

@@ -11,7 +11,7 @@ Title : linkedList.h
 /*The Data that we want to have into our linkedlist*/
 typedef struct
 {
-    /* Data is a char for the exemple*/
+    /* Data is a char* for the exemple*/
     char content[40];
 } Data;
 
@@ -28,11 +28,14 @@ LinkedList* linkedListInit(Data* headData);
 // Insertion in the LinkedList
 void linkedListInsert(LinkedList* linkedList, Data* dataIn);
 void linkedListInsertTo(LinkedList* linkedList, Data* dataIn, int index);
+void linkedListInsertHead(LinkedList** linkedListAdr, Data* dataIn);
+
+// Modification in the LinkedList
 
 // Remove an element of the LinkedList
 void linkedListRmvNode(LinkedList* linkedList, int index);
 
-//Return the size of the linkedList
+// Return the size of the linkedList
 int linkedListSize(LinkedList* linkedList);
 
 /* --------------------------- CHANGE IT FOR YOUR APPLICATION ---------------------------*/

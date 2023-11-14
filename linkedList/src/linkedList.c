@@ -21,7 +21,8 @@ void linkedListInsert(LinkedList* linkedList, Data* dataIn)
     LinkedList* newNode = (LinkedList*)malloc(sizeof(LinkedList));
     LinkedList* currentNode = linkedList;
 
-    while (currentNode->next != NULL) {
+    while (currentNode->next != NULL) 
+    {
             currentNode = currentNode->next;
     }
     currentNode->next = newNode;
@@ -30,7 +31,31 @@ void linkedListInsert(LinkedList* linkedList, Data* dataIn)
 
 void linkedListInsertTo(LinkedList* linkedList, Data* dataIn, int index)
 {
-    
+    LinkedList* newNode = (LinkedList*)malloc(sizeof(LinkedList));
+
+    if(index != 0)
+    {
+        LinkedList* currentNode = linkedList;
+        LinkedList* nextNode;
+
+        for(int i=0; i<index-1; i++)
+        {
+                currentNode = currentNode->next;
+        }
+        nextNode = currentNode->next;
+        currentNode->next = newNode;
+
+        newNode->next = nextNode;
+        newNode->data = dataIn;
+    }
+}
+
+void linkedListInsertHead(LinkedList** linkedList, Data* dataIn)
+{
+    LinkedList* newNode = (LinkedList*)malloc(sizeof(LinkedList));
+    newNode->data = dataIn;
+    newNode->next = *linkedList;
+    *linkedList = newNode;
 }
 
 int linkedListSize(LinkedList* linkedList)
@@ -61,4 +86,19 @@ void linkedListPrint(LinkedList* linkedList)
         index++;
         currentNode = currentNode->next;
     }
+}
+
+void linkedListPrintIndex(LinkedList* linkedList, int index)
+{
+    LinkedList* currentNode = linkedList;
+
+    for(int i = 0; i<index; i++)
+    {
+        currentNode = currentNode->next;
+    }
+
+    /*TO CHANGE IN TERM OF THE NATURE OF THE DATA*/
+    printf("%d - %s\n", index,currentNode->data->content);
+
+    /*-------------------------------------------*/ 
 }
