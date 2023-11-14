@@ -1,16 +1,39 @@
-#pragma once
+/*
+Author : Zeug555
+Last Update : 14/11/23
+Title : linkedList.h
+*/
 
+#pragma once
+#include <stdio.h>
+#include <stdlib.h>
+
+/*The Data that we want to have into our linkedlist*/
 typedef struct
 {
     /* Data is a char for the exemple*/
     char data[40];
 } Data;
 
-
-typedef struct _LinkedList
+/*LinkedList structure*/
+typedef struct _LinkedList 
 {
-    Data data;
-    LinkedList* next;
+    Data* data;
+    struct _LinkedList* next;
 } LinkedList;
 
-void linkedListInsertion(LinkedList* linkedList, Data data);
+// Start the LinkedList
+LinkedList* linkedListInit(Data* headData);
+
+// Insertion in the LinkedList
+void linkedListInsert(LinkedList* linkedList, Data* dataIn);
+void linkedListInsertTo(LinkedList* linkedList, Data* dataIn, int index);
+
+// Remove an element of the LinkedList
+void linkedListRmvNode(LinkedList* linkedList, int index);
+
+/* --------------------------- CHANGE IT FOR YOUR APPLICATION ---------------------------*/
+
+// Print the LinkedList
+void linkedListPrint(LinkedList* linkedList);
+void linkedListPrintIndex(LinkedList* linkedList, int index);
