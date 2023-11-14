@@ -12,7 +12,7 @@ Title : linkedList.h
 typedef struct
 {
     /* Data is a char for the exemple*/
-    char data[40];
+    char content[40];
 } Data;
 
 /*LinkedList structure*/
@@ -31,6 +31,9 @@ void linkedListInsertTo(LinkedList* linkedList, Data* dataIn, int index);
 
 // Remove an element of the LinkedList
 void linkedListRmvNode(LinkedList* linkedList, int index);
+
+//Return the size of the linkedList
+void linkedListSize(LinkedList* linkedList);
 
 /* --------------------------- CHANGE IT FOR YOUR APPLICATION ---------------------------*/
 
