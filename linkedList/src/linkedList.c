@@ -6,6 +6,8 @@ Title : linkedList.c
 
 #include "linkedList.h"
 
+// Start the LinkedList
+
 LinkedList* linkedListInit(Data* headData)
 {
     LinkedList* linkedList = (LinkedList*)malloc(sizeof(LinkedList));
@@ -15,6 +17,8 @@ LinkedList* linkedListInit(Data* headData)
 
     return linkedList;
 }
+
+// Insertion in the LinkedList
 
 void linkedListInsert(LinkedList* linkedList, Data* dataIn)
 {
@@ -58,6 +62,8 @@ void linkedListInsertHead(LinkedList** linkedList, Data* dataIn)
     *linkedList = newNode;
 }
 
+// Modification in the LinkedList
+
 void linkedListModify(LinkedList* linkedList, Data* dataIn, int index)
 {
     if(index != 0)
@@ -86,6 +92,56 @@ int linkedListSize(LinkedList* linkedList)
         currentNode = currentNode->next;
     }
     return size;
+}
+
+// Remove an element of the LinkedList
+
+void linkedListRmvNode(LinkedList** linkedList, int index) 
+{
+    if (index == 0) 
+    {
+        LinkedList* temp = *linkedList;
+        *linkedList = temp->next;
+        free(temp);
+        return;
+    }
+
+    LinkedList* currentNode = *linkedList;
+    for (int i = 0; i < index - 1; i++) 
+    {
+        if (currentNode == NULL || currentNode->next == NULL) 
+        {
+            printf("Error: Index out of bounds\n");
+            return;
+        }
+        currentNode = currentNode->next;
+    }
+
+    if (currentNode->next == NULL) 
+    {
+        printf("Error: Index out of bounds\n");
+        return;
+    }
+
+    LinkedList* temp = currentNode->next;
+    currentNode->next = currentNode->next->next;
+    free(temp);
+}
+
+// Return the size of the linkedList
+
+void linkedListRmvAll(LinkedList** linkedList) 
+{
+    LinkedList* current = *linkedList;
+    LinkedList* next;
+
+    while (current != NULL) {
+        next = current->next;
+        free(current);
+        current = next;
+    }
+
+    *linkedList = NULL;
 }
 
 /* --------------------------- CHANGE IT FOR YOUR APPLICATION ---------------------------*/

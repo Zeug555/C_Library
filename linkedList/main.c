@@ -59,10 +59,20 @@ int main()
     linkedListModifyHead(&linkedlist, patrick);
     linkedListPrint(linkedlist);
 
+    // Remove Node 8 from the list
+    printf("\n--- 8th Node Removal ---\n\n");
+    linkedListRmvNode(&linkedlist, 8);
+    linkedListPrint(linkedlist);
+
     // linkedListSize test
     printf("\n--- Size calculation test ---\n\n");
     int size = linkedListSize(linkedlist);
     printf("Size %d\n", size);
+
+    // Bye bye the list
+    printf("\n--- The end ! ---\n\n");
+    linkedListRmvAll(&linkedlist);
+    linkedListPrint(linkedlist); //Nothing is print and it is normal :)))
 
     return 0;
 }

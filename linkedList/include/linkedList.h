@@ -35,7 +35,8 @@ void linkedListModify(LinkedList* linkedList, Data* dataIn, int index);
 void linkedListModifyHead(LinkedList** linkedListAdr, Data* dataIn);
 
 // Remove an element of the LinkedList
-void linkedListRmvNode(LinkedList* linkedList, int index);
+void linkedListRmvNode(LinkedList** linkedListAdr, int index);
+void linkedListRmvAll(LinkedList** linkedListAdr);
 
 // Return the size of the linkedList
 int linkedListSize(LinkedList* linkedList);
