@@ -58,6 +58,24 @@ void linkedListInsertHead(LinkedList** linkedList, Data* dataIn)
     *linkedList = newNode;
 }
 
+void linkedListModify(LinkedList* linkedList, Data* dataIn, int index)
+{
+    if(index != 0)
+    {
+        LinkedList* currentNode = linkedList;
+        for(int i = 0; i<index; i++)
+        {
+            currentNode = currentNode->next;
+        }
+        currentNode->data = dataIn;
+    }
+}
+
+void linkedListModifyHead(LinkedList** linkedListAdr, Data* dataIn)
+{
+    (*linkedListAdr)->data = dataIn;
+}
+
 int linkedListSize(LinkedList* linkedList)
 {
     LinkedList* currentNode = linkedList;

@@ -47,6 +47,18 @@ int main()
     linkedListInsertHead(&linkedlist, non);
     linkedListPrint(linkedlist);
 
+    // Modification of the 4th element of the list
+    printf("\n--- 4th node modification ---\n\n");
+    Data* patrick = (Data*)malloc(sizeof(Data));
+    strcpy(patrick->content, "patrick");
+    linkedListModify(linkedlist, patrick, 4);
+    linkedListPrint(linkedlist);
+
+    // Modification of the head of the list
+    printf("\n--- Head modification ---\n\n");
+    linkedListModifyHead(&linkedlist, patrick);
+    linkedListPrint(linkedlist);
+
     // linkedListSize test
     printf("\n--- Size calculation test ---\n\n");
     int size = linkedListSize(linkedlist);
