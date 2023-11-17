@@ -9,7 +9,7 @@ Title : array.c
 Array arrayInit(int nbColumnIn, int nbLinesIn)
 {
     Array arrayOut;
-    int** listColumn = (int**)malloc(nbColumnIn*sizeof(int*));
+    int** listColumn = (int**)malloc(nbLinesIn*sizeof(int*));
 
     arrayOut.nbColumn = nbColumnIn;
     arrayOut.nbLines = nbLinesIn;
@@ -18,6 +18,12 @@ Array arrayInit(int nbColumnIn, int nbLinesIn)
     for(int i = 0; i<nbLinesIn; i++)
     {
         int* listLines = (int*)malloc(nbColumnIn*sizeof(int));
+        if(listLines==NULL)                     
+        {
+            printf("Error! memory not allocated.");
+            exit(0);
+        }
+        
         for(int j=0; j<nbColumnIn; j++)
         {
             listLines[j] = 0;
@@ -32,25 +38,36 @@ Array arrayInit(int nbColumnIn, int nbLinesIn)
 Array arrayValueInit(int nbColumnIn, int nbLinesIn, int valueIn)
 {
     Array arrayOut;
-    int** listColumn = (int**)malloc(nbColumnIn*sizeof(int*));
+    int** listColumn = (int**)malloc(nbLinesIn * sizeof(int*));
+    if (listColumn == NULL)
+    {
+        printf("Error! Memory not allocated.");
+        exit(0);
+    }
 
     arrayOut.nbColumn = nbColumnIn;
     arrayOut.nbLines = nbLinesIn;
 
-
-    for(int i = 0; i<nbLinesIn; i++)
+    for (int i = 0; i < nbLinesIn; i++)
     {
-        int* listLines = (int*)malloc(nbColumnIn*sizeof(int));
-        for(int j=0; j<nbColumnIn; j++)
+        int* listLines = (int*)malloc(nbColumnIn * sizeof(int));
+        if (listLines == NULL)
+        {
+            printf("Error! Memory not allocated.");
+            exit(0);
+        }
+
+        for (int j = 0; j < nbColumnIn; j++)
         {
             listLines[j] = valueIn;
         }
         listColumn[i] = listLines;
     }
 
-    arrayOut.array=listColumn;
+    arrayOut.array = listColumn;
     return arrayOut;
 }
+
 
 Array arrayIdentityInit(int sizeIn)
 {
@@ -64,6 +81,12 @@ Array arrayIdentityInit(int sizeIn)
     for(int i = 0; i<sizeIn; i++)
     {
         int* listLines = (int*)malloc(sizeIn*sizeof(int));
+        if(listLines==NULL)                     
+        {
+            printf("Error! memory not allocated.");
+            exit(0);
+        }
+        
         for(int j=0; j<sizeIn; j++)
         {
             if(i!=j) 

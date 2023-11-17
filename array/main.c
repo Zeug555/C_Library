@@ -10,7 +10,7 @@ int main()
 
     //New Array Declaration fill with 1
     printf("\n\n --- New Array Declaration fill with 1 --- \n");
-    Array myArray1 = arrayValueInit(3,6,1);
+    Array myArray1 = arrayValueInit(3,5,1);
     arrayPrint(myArray1);
 
     //New Identity Array (size 3)
