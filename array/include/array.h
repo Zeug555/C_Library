@@ -10,18 +10,18 @@ Title : array.h
 
 typedef struct _Array
 {
-    int** array;
+    float** array;
     int nbColumn;
     int nbLines;
 }Array;
 
 // Array Initialisation
 Array arrayInit(int nbColumnIn, int nbLinesIn);
-Array arrayValueInit(int nbColumnIn, int nbLinesIn, int valueIn); //Bug
+Array arrayValueInit(int nbColumnIn, int nbLinesIn, float valueIn); //Bug
 Array arrayIdentityInit(int sizeIn);
 
 // Array Modification
-void arrayModif(Array arrayIn);
+void arrayModif(Array arrayIn, int column, int line, float data);
 
 void arrayPrint(Array arrayIn);
 

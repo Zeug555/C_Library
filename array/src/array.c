@@ -9,7 +9,7 @@ Title : array.c
 Array arrayInit(int nbColumnIn, int nbLinesIn)
 {
     Array arrayOut;
-    int** listColumn = (int**)malloc(nbLinesIn*sizeof(int*));
+    float** listColumn = (float**)malloc(nbLinesIn*sizeof(float*));
 
     arrayOut.nbColumn = nbColumnIn;
     arrayOut.nbLines = nbLinesIn;
@@ -17,7 +17,7 @@ Array arrayInit(int nbColumnIn, int nbLinesIn)
 
     for(int i = 0; i<nbLinesIn; i++)
     {
-        int* listLines = (int*)malloc(nbColumnIn*sizeof(int));
+        float* listLines = (float*)malloc(nbColumnIn*sizeof(float));
         if(listLines==NULL)                     
         {
             printf("Error! memory not allocated.");
@@ -35,10 +35,10 @@ Array arrayInit(int nbColumnIn, int nbLinesIn)
     return arrayOut;
 }
 
-Array arrayValueInit(int nbColumnIn, int nbLinesIn, int valueIn)
+Array arrayValueInit(int nbColumnIn, int nbLinesIn, float valueIn)
 {
     Array arrayOut;
-    int** listColumn = (int**)malloc(nbLinesIn * sizeof(int*));
+    float** listColumn = (float**)malloc(nbLinesIn * sizeof(float*));
     if (listColumn == NULL)
     {
         printf("Error! Memory not allocated.");
@@ -50,7 +50,7 @@ Array arrayValueInit(int nbColumnIn, int nbLinesIn, int valueIn)
 
     for (int i = 0; i < nbLinesIn; i++)
     {
-        int* listLines = (int*)malloc(nbColumnIn * sizeof(int));
+        float* listLines = (float*)malloc(nbColumnIn * sizeof(float));
         if (listLines == NULL)
         {
             printf("Error! Memory not allocated.");
@@ -72,7 +72,7 @@ Array arrayValueInit(int nbColumnIn, int nbLinesIn, int valueIn)
 Array arrayIdentityInit(int sizeIn)
 {
     Array arrayOut;
-    int** listColumn = (int**)malloc(sizeIn*sizeof(int*));
+    float** listColumn = (float**)malloc(sizeIn*sizeof(float*));
 
     arrayOut.nbColumn = sizeIn;
     arrayOut.nbLines = sizeIn;
@@ -80,7 +80,7 @@ Array arrayIdentityInit(int sizeIn)
 
     for(int i = 0; i<sizeIn; i++)
     {
-        int* listLines = (int*)malloc(sizeIn*sizeof(int));
+        float* listLines = (float*)malloc(sizeIn*sizeof(float));
         if(listLines==NULL)                     
         {
             printf("Error! memory not allocated.");
@@ -101,13 +101,18 @@ Array arrayIdentityInit(int sizeIn)
     return arrayOut;
 }
 
+void arrayModif(Array arrayIn, int column, int line, float data)
+{
+    
+}
+
 void arrayPrint(Array arrayIn)
 {
     for(int i = 0; i<arrayIn.nbLines; i++)
     {
         for(int j=0; j<arrayIn.nbColumn; j++)
         {
-            printf("%d ",arrayIn.array[i][j]);
+            printf("%.2f ",arrayIn.array[i][j]);
         }
         printf("\n");
     }
