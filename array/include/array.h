@@ -19,9 +19,17 @@ typedef struct _Array
 Array arrayInit(int nbColumnIn, int nbLinesIn);
 Array arrayValueInit(int nbColumnIn, int nbLinesIn, float valueIn); //Bug
 Array arrayIdentityInit(int sizeIn);
+Array arrayHollowInit(int nbColumnIn, int nbLinesIn);
 
-// Array Modification
+// Array Modification (for beginners)
 void arrayModif(Array arrayIn, int column, int line, float data);
 
+// Addition of Arrays
+Array arrayAdd(Array array1,Array Array2);
+
+// Product of Arrays
+Array arrayProduct(Array array1, Array Array2);
+
+// Array Print
 void arrayPrint(Array arrayIn);
 
