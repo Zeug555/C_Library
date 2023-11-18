@@ -1,4 +1,4 @@
-# Documentation du Code en C
+# Documentation - Array.h
 
 ---
 
