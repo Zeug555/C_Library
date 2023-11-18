@@ -1,5 +1,7 @@
 # Documentation du Code en C
 
+---
+
 ## FR
 
 ### Introduction
@@ -37,37 +39,38 @@ La structure `Array` est définie comme une matrice à deux dimensions (`float**
 2. **`arrayRemove`**: Libère la mémoire allouée pour la matrice.
 
 ---
+## ENG
 
-## Introduction
+### Introduction
 
 This C code, consisting of the files `main.c`, `array.h`, and `array.c`, provides a basic implementation of a matrix data structure (`Array`). It offers functionalities such as matrix initialization, element modification, addition and multiplication of matrices, as well as other operations.
 
-## Structure `Array`
+### Structure `Array`
 
 The `Array` structure is defined as a two-dimensional matrix (`float**`). It contains the number of columns (`nbColumn`), the number of lines (`nbLines`), and a pointer to the matrix itself (`array`).
 
-## Initialization Functions
+### Initialization Functions
 
 1. **`arrayInit`**: Initializes a new matrix with specified dimensions.
 2. **`arrayValueInit`**: Initializes a new matrix with specified dimensions and a specified value for all its elements.
 3. **`arrayIdentityInit`**: Initializes a square identity matrix with a specified size.
 4. **`arrayHollowInit`**: Initializes a matrix with specified dimensions, leaving all elements uninitialized.
 
-## Modification Functions
+### Modification Functions
 
 1. **`arrayModif`**: Modifies a specific element of the matrix.
 
-## Mathematical Operation Functions
+### Mathematical Operation Functions
 
 1. **`arrayAdd`**: Adds two matrices of the same size.
 2. **`arrayProduct`**: Multiplies two conforming matrices for matrix multiplication.
 3. **`arrayFloatProduct`**: Multiplies all elements of a matrix by a scalar.
 
-## Additional Operation Functions
+### Additional Operation Functions
 
 1. **`arrayFlip`**: Performs a symmetry (flip) operation on the matrix.
 
-## Display and Deletion Functions
+### Display and Deletion Functions
 
 1. **`arrayPrint`**: Displays the matrix.
 2. **`arrayRemove`**: Frees the memory allocated for the matrix.
