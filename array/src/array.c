@@ -164,6 +164,46 @@ Array arrayAdd(Array array1,Array array2)
     }
 }
 
+Array arrayProduct(Array array1, Array array2)
+{
+    if (array1.nbColumn==array2.nbLines)
+    {
+        Array arrayOut = arrayHollowInit(array1.nbLines, array2.nbColumn);
+
+        for (int i = 0; i < array1.nbLines; i++)
+        {
+            for(int j=0; j<array2.nbColumn; j++)
+            {
+                for(int k=0; k<array1.nbColumn; k++)
+                {
+                    arrayOut.array[i][j] += array1.array[i][k] * array2.array[k][j];
+                }
+            }
+        }
+        return arrayOut;
+    }
+
+    else
+    {
+        printf("Product Error! The dimensions of the 2 arrays don't allow product.");
+        exit(0);   
+    }
+    
+}
+
+Array arrayFloatProduct(Array arrayIn, float multiplicator)
+{
+    Array arrayOut = arrayHollowInit(arrayIn.nbColumn, arrayIn.nbLines);
+    for (int i = 0; i < arrayIn.nbLines; i++)
+    {
+        for (int j = 0; j < arrayIn.nbColumn; j++)
+        {
+            arrayOut.array[i][j] = arrayIn.array[i][j]*multiplicator;
+        }
+    }
+    return arrayOut;
+}
+
 void arrayPrint(Array arrayIn)
 {
     for(int i = 0; i<arrayIn.nbLines; i++)

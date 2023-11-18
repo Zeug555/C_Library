@@ -18,8 +18,8 @@ int main()
 
     //New Array Declaration fill with 2
     printf("\n\n --- New Array Declaration fill with 2 --- \n");
-    Array myArray1 = arrayValueInit(3,5,2);
-    arrayPrint(myArray1);
+    Array myArray2 = arrayValueInit(3,5,2);
+    arrayPrint(myArray2);
 
     //New Identity Array (size 3)
     printf("\n\n --- New Identity Array (size 3) --- \n");
@@ -49,6 +49,22 @@ int main()
     arrayPrint(myArray);
     printf("\n-Result-\n");
     arrayPrint(arrayAdd(myArrayAdd, myArray));
+
+    //Product of 2 Arrays
+    printf("\n\n --- Product of 2 Arrays --- \n");
+    printf("\n-array1-\n");
+    arrayPrint(myArray);
+    printf("\n-array2-\n");
+    arrayPrint(myArray2);
+    printf("\n-Product-\n");
+    arrayPrint(arrayProduct(myArray, myArray2));
+
+    //Product with a float
+    printf("\n\n --- Product with 0,5 of myArray2--- \n");
+    printf("\n-Original Array-\n");
+    arrayPrint(myArray2);
+    printf("\n-After Product-\n");
+    arrayPrint(arrayFloatProduct(myArray2, 0.5));
 
     return 0;
 }

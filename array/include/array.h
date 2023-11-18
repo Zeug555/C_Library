@@ -25,10 +25,11 @@ Array arrayHollowInit(int nbColumnIn, int nbLinesIn);
 void arrayModif(Array arrayIn, int column, int line, float data);
 
 // Addition of Arrays
-Array arrayAdd(Array array1,Array Array2);
+Array arrayAdd(Array array1,Array array2);
 
 // Product of Arrays
-Array arrayProduct(Array array1, Array Array2);
+Array arrayProduct(Array array1, Array array2);
+Array arrayFloatProduct(Array arrayIn, float multiplicator);
 
 // Array Print
 void arrayPrint(Array arrayIn);
