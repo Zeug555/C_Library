@@ -60,11 +60,24 @@ int main()
     arrayPrint(arrayProduct(myArray, myArray2));
 
     //Product with a float
-    printf("\n\n --- Product with 0,5 of myArray2--- \n");
+    printf("\n\n --- Product with 0,5 of myArray2 --- \n");
     printf("\n-Original Array-\n");
     arrayPrint(myArray2);
     printf("\n-After Product-\n");
     arrayPrint(arrayFloatProduct(myArray2, 0.5));
+
+    //Array Flip
+    printf("\n\n --- Array Flip --- \n");
+    printf("\n-Original Array-\n");
+    arrayPrint(myArray);
+    printf("\n-After Product-\n");
+    arrayPrint(arrayFlip(myArray));
+
+    //Remove the Array
+    printf("\n\n --- Remove myArray --- \n");
+    arrayRemove(myArray);
+
+    printf("\n\n --- End --- \n");
 
     return 0;
 }

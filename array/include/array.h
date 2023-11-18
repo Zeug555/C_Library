@@ -21,7 +21,7 @@ Array arrayValueInit(int nbColumnIn, int nbLinesIn, float valueIn); //Bug
 Array arrayIdentityInit(int sizeIn);
 Array arrayHollowInit(int nbColumnIn, int nbLinesIn);
 
-// Array Modification (for beginners)
+// Array Modification
 void arrayModif(Array arrayIn, int column, int line, float data);
 
 // Addition of Arrays
@@ -31,6 +31,11 @@ Array arrayAdd(Array array1,Array array2);
 Array arrayProduct(Array array1, Array array2);
 Array arrayFloatProduct(Array arrayIn, float multiplicator);
 
+// Array Flip
+Array arrayFlip(Array arrayIn);
+
 // Array Print
 void arrayPrint(Array arrayIn);
 
+// Array Remove
+void arrayRemove(Array arrayIn);

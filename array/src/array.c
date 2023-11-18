@@ -141,6 +141,19 @@ void arrayModif(Array arrayIn, int column, int line, float data)
     arrayIn.array[column][line] = data;
 }
 
+Array arrayFlip(Array arrayIn)
+{
+    Array arrayOut = arrayHollowInit(arrayIn.nbLines, arrayIn.nbColumn);
+    for(int i = 0; i<arrayIn.nbLines; i++)
+    {
+        for(int j=0; j<arrayIn.nbColumn; j++)
+        {
+            arrayOut.array[j][arrayIn.nbLines-i-1] = arrayIn.array[i][j];
+        }
+    }
+    return arrayOut;
+}
+
 Array arrayAdd(Array array1,Array array2)
 {
     if((array1.nbColumn==array2.nbColumn)&&(array1.nbLines==array2.nbLines))
@@ -214,4 +227,13 @@ void arrayPrint(Array arrayIn)
         }
         printf("\n");
     }
+}
+
+void arrayRemove(Array arrayIn)
+{
+    for(int i = 0; i<arrayIn.nbLines; i++)
+    {
+        free(arrayIn.array[i]);
+    }
+    free(arrayIn.array);
 }
